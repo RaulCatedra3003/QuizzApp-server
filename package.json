@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend for QuizzApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaulCatedra3003/QuizzApp-server.git"
+  },
+  "author": "Raúl Cátedra Martínez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RaulCatedra3003/QuizzApp-server/issues"
+  },
+  "homepage": "https://github.com/RaulCatedra3003/QuizzApp-server#readme"
+}
