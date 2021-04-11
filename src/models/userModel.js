@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema(
   {
-    _id: { type: String, required: [true, 'User id is required'] },
+    _id: {
+      type: String,
+      required: [true, 'User id is required'],
+      unique: true,
+    },
     firstName: {
       type: String,
       required: [true, 'First name is required'],
@@ -13,7 +17,12 @@ const UserSchema = new mongoose.Schema(
       required: [true, 'Last name is required'],
       trim: true,
     },
-    email: { type: String, required: [true, 'email is required'], trim: true },
+    email: {
+      type: String,
+      required: [true, 'email is required'],
+      trim: true,
+      unique: true,
+    },
     rol: { type: String, trim: true, default: 'user', enum: ['user', 'admin'] },
   },
   {

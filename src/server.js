@@ -18,7 +18,7 @@ app.use(
   }),
 );
 
-app.use('/user', UserRouter);
+app.use('/users', UserRouter);
 
 app.use(errorMiddleware);
 
