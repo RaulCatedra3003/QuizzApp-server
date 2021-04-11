@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const { config } = require('./config');
+const UserRouter = require('./routes/userRoutes');
+const errorMiddleware = require('./middleware/errorMiddleware');
 
 const app = express();
 
@@ -16,9 +18,9 @@ app.use(
   }),
 );
 
-app.get('/', (req, res) => {
-  res.status(200).send('hello world');
-});
+app.use('/user', UserRouter);
+
+app.use(errorMiddleware);
 
 module.exports = {
   app,
