@@ -1,5 +1,25 @@
 const db = require('../models');
 
+async function getUserById(req, res, next) {
+  const { userId } = req.params;
+
+  try {
+    const user = await db.User.find({ _id: userId });
+
+    res.status(200).send({
+      data: {
+        id: user[0]._id,
+        firstName: user[0].firstName,
+        lastName: user[0].lastName,
+        email: user[0].email,
+        rol: user[0].rol,
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
 async function newUser(req, res, next) {
   const { id, firstName, lastName, email } = req.body;
 
@@ -27,4 +47,5 @@ async function newUser(req, res, next) {
 
 module.exports = {
   newUser,
+  getUserById,
 };
